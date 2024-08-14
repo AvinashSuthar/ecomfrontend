@@ -7,15 +7,17 @@ const Product = ({ product }) => {
 
   const handleAddToCart = async () => {
     if (auth.isAuthenticated) {
-      await addToCart(product._id, 1, auth.token);
+        console.log("ha ha")
+        console.log(localStorage.getItem('token'))
+      await addToCart(product._id, 1, localStorage.getItem('token'));
     } else {
       alert('Please login to add products to cart');
     }
   };
 
   return (
-    <div className="product-card">
-      <img src={product.image} alt={product.name} />
+    <div className="product-card border">
+      
       <h3>{product.name}</h3>
       <p>${product.price}</p>
       <button onClick={handleAddToCart}>Add to Cart</button>

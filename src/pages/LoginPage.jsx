@@ -13,7 +13,9 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       const data = await login(email, password);
+        console.log({data});
       authLogin(data.token);
+      
       navigate("/");
     } catch (error) {
       alert("Login failed");

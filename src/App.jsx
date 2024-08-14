@@ -14,21 +14,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const App = () => {
   return (
     <AuthProvider>
-      <CartProvider> {/* Wrap with CartProvider */}
+      <CartProvider> 
         <Router>
           <Header />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
-            <Route 
-              path="/product-management" 
-              element={
-                <ProtectedRoute>
-                  <ProductManagementPage />
-                </ProtectedRoute>
-              }
-            />
             <Route path="/cart" element={<CartPage />} />
           </Routes>
         </Router>

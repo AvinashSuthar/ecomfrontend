@@ -18,13 +18,17 @@ const HomePage = () => {
   }, [filters]);
 
   return (
-    <div className="homepage">
+    <div className="homepage d-flex ">
+        
       <Sidebar filters={filters} onFilterChange={setFilters} />
-      <div className="products">
+      <div className='m-4 border '>
+        
         {products.map((product) => (
+            
           <Product key={product._id} product={product} />
         ))}
       </div>
+      
     </div>
   );
 };

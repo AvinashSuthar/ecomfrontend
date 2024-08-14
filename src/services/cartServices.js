@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "https://ecommercebackend-sb87.onrender.com/api/auth";
+const API_URL = "https://ecommercebackend-sb87.onrender.com/api/cart";
+// const API_URL = "http://localhost:3000/api/cart";
 
 
 
