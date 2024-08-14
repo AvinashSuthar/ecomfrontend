@@ -1,20 +1,18 @@
 // src/App.js
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
-import ProductManagementPage from './pages/PruductManagementPage';
-import CartPage from './pages/CartPage';
-import Header from './components/Header';
-import ProtectedRoute from './components/ProtectedRoute';
-import { AuthProvider } from './context/AuthContext';
-import { CartProvider } from './context/CartContext'; // Import CartProvider
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import CartPage from "./pages/CartPage";
+import Header from "./components/Header";
+import { AuthProvider } from "./context/AuthContext";
+import { CartProvider } from "./context/CartContext"; // Import CartProvider
 import "bootstrap/dist/css/bootstrap.min.css";
 const App = () => {
   return (
     <AuthProvider>
-      <CartProvider> 
+      <CartProvider>
         <Router>
           <Header />
           <Routes>

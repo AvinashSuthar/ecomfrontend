@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useContext } from 'react';
-import { getCartItems } from '../services/cartServices';
-import { AuthContext } from '../context/AuthContext';
+import React, { useEffect, useState, useContext } from "react";
+import { getCartItems } from "../services/cartServices";
+import { AuthContext } from "../context/AuthContext";
 
 const Cart = () => {
   const { auth } = useContext(AuthContext);

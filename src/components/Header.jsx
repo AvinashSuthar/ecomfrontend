@@ -17,15 +17,15 @@ const Header = () => {
         <a className="navbar-brand" href="/">
           Omninos E-commerce
         </a>
-        
-        <div className="" >
+
+        <div className="">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
               <Link className="nav-link" to="/">
                 Home
               </Link>
             </li>
-            
+
             <li className="nav-item">
               <Link className="nav-link" to="/cart">
                 <FaShoppingCart className="mr-2" />

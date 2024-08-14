@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const ProductList = ({ products, onEdit, onDelete }) => {
   return (
     <div>
       <h3>Product List</h3>
       <ul>
-        {products.map(product => (
+        {products.map((product) => (
           <li key={product._id}>
             <div>
               <h4>{product.name}</h4>

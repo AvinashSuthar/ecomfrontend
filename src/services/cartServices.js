@@ -3,8 +3,6 @@ import axios from "axios";
 const API_URL = "https://ecommercebackend-sb87.onrender.com/api/cart";
 // const API_URL = "http://localhost:3000/api/cart";
 
-
-
 export const addToCart = async (productId, quantity, token) => {
   const response = await axios.post(
     `${API_URL}/add`,

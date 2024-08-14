@@ -13,9 +13,9 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       const data = await login(email, password);
-        console.log({data});
+      console.log({ data });
       authLogin(data.token);
-      
+
       navigate("/");
     } catch (error) {
       alert("Login failed");
@@ -23,32 +23,37 @@ const LoginPage = () => {
   };
 
   return (
-<form onSubmit={handleLogin} className="container form-group">
-  <div className="mb-3">
-    <label htmlFor="email" className="form-label">Email:</label>
-    <input
-      id="email"
-      type="email"
-      className="form-control"
-      value={email}
-      onChange={(e) => setEmail(e.target.value)}
-      required
-    />
-  </div>
-  <div className="mb-3">
-    <label htmlFor="password" className="form-label">Password:</label>
-    <input
-      id="password"
-      type="password"
-      className="form-control"
-      value={password}
-      onChange={(e) => setPassword(e.target.value)}
-      required
-    />
-  </div>
-  <button type="submit" className="btn btn-primary">Login</button>
-</form>
-
+    <form onSubmit={handleLogin} className="container form-group">
+      <div className="mb-3">
+        <label htmlFor="email" className="form-label">
+          Email:
+        </label>
+        <input
+          id="email"
+          type="email"
+          className="form-control"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="password" className="form-label">
+          Password:
+        </label>
+        <input
+          id="password"
+          type="password"
+          className="form-control"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+      </div>
+      <button type="submit" className="btn btn-primary">
+        Login
+      </button>
+    </form>
   );
 };
 
