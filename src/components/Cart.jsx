@@ -1,27 +1,34 @@
 import React, { useEffect, useState, useContext } from "react";
-import { getCartItems } from "../services/cartServices";
-import { AuthContext } from "../context/AuthContext";
+import { CartContext } from "../context/CartContext";
 
 const Cart = () => {
-  const { auth } = useContext(AuthContext);
-  const [cartItems, setCartItems] = useState([]);
-
-  useEffect(() => {
-    const fetchCartItems = async () => {
-      const items = await getCartItems(auth.token);
-      setCartItems(items?.products || []);
-    };
-    fetchCartItems();
-  }, [auth.token]);
+  const { cartItems } = useContext(CartContext);
 
   return (
-    <div>
-      <h2>Your Cart</h2>
+    <div className="d-flex flex-direction-row m-3">
       {cartItems.map((item) => (
-        <div key={item.productId._id}>
-          <h4>{item.productId.name}</h4>
-          <p>Quantity: {item.quantity}</p>
+        <div className="card m-2"  key={item.productId._id} style={{ width: '18rem', height: '18rem' }}>
+        <img
+          src={item.productId.image}
+          className="card-img-top img-custom"
+          alt={item.productId.name}
+        />
+        <div className="card-body">
+          <h5 className="card-title">{item.productId.name}</h5>
+          <p className="card-text">${item.quantity}</p>
         </div>
+      </div>
+        // <div
+        //   className="card m-3"
+        //   style={{ width: "18rem" }}
+        //   key={item.productId._id}
+        // >
+        //   <img src={item.image} className="card-img-top object-fit-fill" alt="..." />
+        //   <div className="card-body">
+        //     <h5 className="card-title">{item.productId.name}</h5>
+        //     <p className="card-text">Quantity: {item.quantity}</p>
+        //   </div>
+        // </div>
       ))}
     </div>
   );

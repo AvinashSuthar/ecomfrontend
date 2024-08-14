@@ -19,9 +19,9 @@ const HomePage = () => {
   }, [filters]);
 
   return (
-    <div className="homepage d-flex ">
+    <div className="homepage d-flex  ">
       <Sidebar filters={filters} onFilterChange={setFilters} />
-      <div className="m-4 border ">
+      <div className="m-4 d-flex flex-wrap">
         {products.map((product) => (
           <Product key={product._id} product={product} />
         ))}
