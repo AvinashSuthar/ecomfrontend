@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = "https://ecommercebackend-sb87.onrender.com";
+const API_URL = "https://ecommercebackend-sb87.onrender.com/api/auth";
+
 
 
 export const getProducts = async () => {
