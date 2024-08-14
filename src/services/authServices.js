@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3000/api/auth";
+const API_URL = "https://ecommercebackend-sb87.onrender.com";
 
 export const register = async (name, email, password) => {
   const response = await axios.post(`${API_URL}/register`, {
